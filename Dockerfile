@@ -6,6 +6,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && apt -y upgrade \
 	&& apt clean
 ADD *.list /etc/apt/sources.list.d/
 RUN apt update && apt install -t experimental -y tinysvm yamcha && apt clean
+ADD comainu /usr/local/bin/
 RUN exec bash -exc ' \
 	mkdir -p /var/tmp/build; \
 	cd /var/tmp/build; \
@@ -34,9 +35,9 @@ RUN exec bash -exc ' \
 	adduser comainu --gecos="Comainu" --disabled-password; \
 	cd /; \
 	rm -rf /var/tmp/build; \
+	rmdir /opt/Comainu/tmp; \
+	ln -s /tmp /opt/Comainu/tmp; \
+	chmod 755 /usr/local/bin/comainu; \
 '
-ADD comainu /usr/local/bin/
-RUN chmod 755 /usr/local/bin/comainu
 ADD --chown=comainu:comainu .inputrc /home/comainu
-WORKDIR	/opt/Comainu
 USER comainu
