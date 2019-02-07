@@ -1,19 +1,12 @@
 # Docker-comainu
 Docker image for [Comainu](http://comainu.org/) based on Debian stretch.
 
-## Build image
+## Pull
 
-Currently I do NOT push to dockerhub image because it's large (> 3GB).
-You need to build your own image.
-
-```
-docker build . -t comainu
-```
-
-Then test with;
+*Warning:* This image is very large (> 3GB).
 
 ```
-docker run --rm comainu comainu --help-method
+docker pull sugi/comainu
 ```
 
 ## Image structure
