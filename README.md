@@ -20,7 +20,7 @@ docker pull sugi/comainu
 ### Interactive
 
 ```
-docker run --rm -it comainu
+docker run --rm -it sugi/comainu
 comainu@d85a76989280:/$ comainu plain2longout < /opt/Comainu/sample/plain/sample2.txt
 B	最近	サイキン	サイキン	最近	名詞-普通名詞-副詞可能			名詞-普通名詞-一般	*	*	サイキン	最近	最近
 	は	ワ	ハ	は	助詞-係助詞			助詞-係助詞	*	*	ハ	は	は
@@ -37,7 +37,7 @@ B	最近	サイキン	サイキン	最近	名詞-普通名詞-副詞可能			名
 ### Batch
 
 ```
-sugi@tempest:~% echo '長単位を自動構成するツールです。' | docker run -i --rm comainu comainu plain2longout
+sugi@tempest:~% echo '長単位を自動構成するツールです。' | docker run -i --rm sugi/comainu comainu plain2longout
 
 Finish.
 B	長	チョー	チョウ	長	接頭辞			名詞-普通名詞-一般	*	*	チョウタンイ	長単位	長単位
