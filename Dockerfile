@@ -2,7 +2,7 @@ FROM debian:stretch
 LABEL maintainer="Tatsuki Sugiura <sugi@nemui.org>"
 RUN DEBIAN_FRONTEND=noninteractive apt update && apt -y upgrade \
 	&& apt install -y build-essential libperl-dev unidic-mecab mecab default-jre-headless \
-	  patch file wget libdbi-perl libdbd-sqlite3-perl libpar-packer-perl locales-all \
+	  patch file wget libdbi-perl libdbd-sqlite3-perl libpar-packer-perl locales-all time \
 	&& apt clean
 ADD *.list /etc/apt/sources.list.d/
 RUN apt update && apt install -t experimental -y tinysvm yamcha && apt clean
