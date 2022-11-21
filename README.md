@@ -1,5 +1,8 @@
 # Docker-comainu
-Docker image for [Comainu](http://comainu.org/) based on Debian stretch.
+Docker image for [Comainu](http://comainu.org/).
+
+* based on Debian bullseye.
+* includes mecab with [mecab-ipadic-NEologd](https://github.com/neologd/mecab-ipadic-neologd)
 
 ## Pull
 
